@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const WeatherCard = ({ data }: Props) => (
-  <div className="bg-white p-6 rounded-xl shadow text-center mt-4">
+  <div className="bg-white/80 backdrop-blur p-6 rounded-xl shadow text-center mt-4">
     <h2 className="text-2xl font-bold">{data.name}</h2>
     <p className="capitalize">{data.weather[0].description}</p>
     <p className="text-4xl font-bold">

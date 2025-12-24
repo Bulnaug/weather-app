@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const ForecastCard = ({ item }: Props) => (
-  <div className="bg-white p-4 rounded-xl shadow text-center">
+  <div className="bg-white/80 backdrop-blur p-4 rounded-xl shadow text-center">
     <p className="font-semibold">
       {new Date(item.dt * 1000).toLocaleDateString(undefined, {
         weekday: 'short',

@@ -4,6 +4,7 @@ export interface WeatherData {
     lon: number;
   };
   weather: {
+    main: string;
     description: string;
     icon: string;
   }[];

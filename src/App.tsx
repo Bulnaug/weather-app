@@ -5,6 +5,7 @@ import { WeatherCard } from './components/WeatherCard';
 import { ForecastCard } from './components/ForecastCard';
 import { type WeatherData } from './types/weather';
 import { type ForecastResponse } from './types/forecast';
+import { getWeatherBackground } from './utils/getWeatherBackground';
 
 function App() {
   const [city, setCity] = useState('Gescher');
@@ -32,8 +33,13 @@ function App() {
     }
   };
 
+ const backgroundClass = weather
+  ? getWeatherBackground(weather.weather[0].main)
+  : 'bg-blue-100';
+
+
   return (
-    <div className="min-h-screen bg-blue-100 p-6 flex flex-col items-center">
+    <div className={`min-h-screen p-6 flex flex-col items-center transition-colors duration-500 ${backgroundClass}`}>
       <div className="w-full max-w-md">
         <input
           className="w-full p-2 rounded border"
