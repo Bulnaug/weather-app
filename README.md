@@ -34,17 +34,17 @@
 
 ## 📁 Структура проекта
 
-src/
- api/
-   weather.ts # текущая погода
-   forecast.ts # прогноз на 5 дней
- components/
-   WeatherCard.tsx
-   ForecastCard.tsx
- types/
-   weather.ts
-   forecast.ts
- App.tsx
+- src/
+-  api/
+-  weather.ts # текущая погода
+-  forecast.ts # прогноз на 5 дней
+- components/
+-  WeatherCard.tsx
+-  ForecastCard.tsx
+- types/
+-  weather.ts
+-  forecast.ts
+- App.tsx
 
 ---
 
