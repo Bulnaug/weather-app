@@ -7,7 +7,7 @@ import { type WeatherData } from './types/weather';
 import { type ForecastResponse } from './types/forecast';
 
 function App() {
-  const [city, setCity] = useState('Moscow');
+  const [city, setCity] = useState('Gescher');
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [forecast, setForecast] = useState<ForecastResponse | null>(null);
   const [error, setError] = useState('');

@@ -7,7 +7,7 @@
 
 ## 🚀 Демо
 
-👉 *(добавишь ссылку после деплоя на Vercel)*
+👉 (https://weather-kp0n1kdwh-vitaliis-projects-51425338.vercel.app)
 
 ---
 
