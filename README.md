@@ -1,28 +1,27 @@
 # 🌤️ Weather App
 
-Современное погодное приложение на **React + TypeScript**, использующее **OpenWeatherMap API**.  
-Показывает текущую погоду и прогноз на 5 дней для любого города.
+Moderne Wetter-App auf **React + TypeScript**, die die **OpenWeatherMap API** nutzt.  
+Zeigt das aktuelle Wetter und die Prognose für 5 Tage für jede beliebige Stadt an.
 
 ---
 
-## 🚀 Демо
+## 🚀 Demo
 
 👉 (https://weather-kp0n1kdwh-vitaliis-projects-51425338.vercel.app)
 
 ---
 
-## ✨ Возможности
+## ✨ Funktionen
 
-- 🔍 Поиск погоды по городу
-- 🌡️ Текущая температура, влажность и ветер
-- 📅 Прогноз погоды на 5 дней
-- 🎨 Адаптивный UI с Tailwind CSS
-- ⚡ Быстрые запросы к OpenWeatherMap API
-- 🧠 Строгая типизация с TypeScript
+- 🔍 Wettersuche nach Stadt
+- 🌡️ Aktuelle Temperatur, Luftfeuchtigkeit und Wind
+- 📅 Prognose für 5 Tage
+- 🎨 Adaptive UI mit Tailwind CSS
+- ⚡ Schnelle Anfragen an die OpenWeatherMap-API
 
 ---
 
-## 🛠️ Технологии
+## 🛠️ Stack
 
 - **React**
 - **TypeScript**
@@ -32,11 +31,11 @@
 
 ---
 
-## 🌍 Используемые API
+## 🌍 API
 
-- Current Weather
+- Aktuelle Wetter
 https://api.openweathermap.org/data/2.5/weather
-- 5 Day / 3 Hour Forecast (Free)
+- Prognose für 5 Tage (Free)
 https://api.openweathermap.org/data/2.5/forecast
 
 
