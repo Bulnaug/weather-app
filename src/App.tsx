@@ -1,65 +1,68 @@
-import React, { useState } from 'react';
-import WeatherCard from './components/WeatherCard';
-import ForecastCard from './components/ForecastCard';
+import { useState } from 'react';
 import { fetchCurrentWeather } from './api/weather';
 import { fetchForecast } from './api/forecast';
+import { WeatherCard } from './components/WeatherCard';
+import { ForecastCard } from './components/ForecastCard';
 import { type WeatherData } from './types/weather';
-import { type ForecastData } from './types/forecast';
+import { type ForecastResponse } from './types/forecast';
 
-const App: React.FC = () => {
+function App() {
   const [city, setCity] = useState('Moscow');
   const [weather, setWeather] = useState<WeatherData | null>(null);
-  const [forecast, setForecast] = useState<ForecastData | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [forecast, setForecast] = useState<ForecastResponse | null>(null);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleFetch = async () => {
-  setLoading(true);
-  setError('');
-  try {
-    const data = await fetchCurrentWeather(city);
-    setWeather(data);
+    setLoading(true);
+    setError('');
 
-    const forecastData = await fetchForecast(data.coord.lat, data.coord.lon);
-    setForecast(forecastData);
-  } catch (err) {
-    setError((err as Error).message);
-    setWeather(null);
-    setForecast(null);
-  } finally {
-    setLoading(false);
-  }
-};
+    try {
+      const weatherData = await fetchCurrentWeather(city);
+      setWeather(weatherData);
+
+      const forecastData = await fetchForecast(city);
+      setForecast(forecastData);
+    } catch (err) {
+      setError((err as Error).message);
+      setWeather(null);
+      setForecast(null);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-start bg-blue-100 p-4 overflow-auto">
-      <div className="flex flex-col items-center w-full max-w-md">
+    <div className="min-h-screen bg-blue-100 p-6 flex flex-col items-center">
+      <div className="w-full max-w-md">
         <input
-          className="p-2 rounded-md border border-gray-300 w-full"
+          className="w-full p-2 rounded border"
           value={city}
           onChange={(e) => setCity(e.target.value)}
-          placeholder="Enter city"
         />
         <button
-          className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md w-full"
+          className="w-full mt-2 bg-blue-500 text-white p-2 rounded"
           onClick={handleFetch}
         >
-          {loading ? 'Loading...' : 'Get Weather'}
+          {loading ? 'Loading…' : 'Get Weather'}
         </button>
         {error && <p className="text-red-500 mt-2">{error}</p>}
       </div>
 
       {weather && <WeatherCard data={weather} />}
 
-      {/* {forecast && (
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6 w-full max-w-4xl">
-          {forecast.daily.slice(0, 5).map((day) => (
-            <ForecastCard key={day.dt} forecast={day} />
-          ))}
+      {forecast && (
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-6">
+          {forecast.list
+            .filter((_, i) => i % 8 === 0)
+            .slice(0, 5)
+            .map((item) => (
+              <ForecastCard key={item.dt} item={item} />
+            ))}
         </div>
-      )} */}
+      )}
     </div>
   );
-};
+}
 
 export default App;
