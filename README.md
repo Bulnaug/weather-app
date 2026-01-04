@@ -7,7 +7,7 @@ Zeigt das aktuelle Wetter und die Prognose für 5 Tage für jede beliebige Stadt
 
 ## 🚀 Demo
 
-👉 (https://weather-kp0n1kdwh-vitaliis-projects-51425338.vercel.app)
+https://weather-app-gamma-dusky-7dyv5fxbh7.vercel.app/
 
 ---
 
